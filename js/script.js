@@ -167,3 +167,26 @@ const player = cld.videoPlayer('my-cloudinary-video', {
            publicId: 'thumbnail_ortexq'
     }
 });
+
+const contactForm = document.querySelector('form[name="contact"]');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const myForm = e.target;
+    const formData = new URLSearchParams(new FormData(myForm));
+
+    fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString()
+    })
+    .then(() => {
+        alert('Thank you for your message! I will get back to you soon.');
+        myForm.reset();
+    })
+    .catch((error) => {
+        alert('Sorry, there was an error sending your message. Please try again.');
+        console.error(error);
+    });
+});

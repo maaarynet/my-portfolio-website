@@ -132,14 +132,19 @@
 
         <section id="contact" class="contact-section">
 
-        <section id="contact" class="contact-section">
+        <section id="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-section">
             <div class="contact-content">
                 <div class="contact-icon">
                      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="url(#paint0_linear_1_2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 6l-10 7L2 6" stroke="url(#paint1_linear_1_2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><defs><linearGradient id="paint0_linear_1_2" x1="2" y1="12" x2="22" y2="12" gradientUnits="userSpaceOnUse"><stop stop-color="#00C9FF"></stop><stop offset="1" stop-color="#92FE9D"></stop></linearGradient><linearGradient id="paint1_linear_1_2" x1="2" y1="9.5" x2="22" y2="9.5" gradientUnits="userSpaceOnUse"><stop stop-color="#00C9FF"></stop><stop offset="1" stop-color="#92FE9D"></stop></linearGradient></defs></svg>
                 </div>
                 <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
                 <p class="section-subtitle">Have a project in mind or just want to chat? Feel free to reach out!</p>
-                <form class="contact-form">
+                <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div style="display:none;">
+                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                    </div>
+
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="your.email@example.com" required>
@@ -147,7 +152,7 @@
                     <div class="form-group">
                         <textarea name="message" placeholder="Your message..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-submit">Send Message</button>
+                    <button type="submit" class="btn-submit">Send Message</button>
                 </form>
             </div>
         </section>
